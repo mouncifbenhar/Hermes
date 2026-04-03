@@ -1,5 +1,3 @@
-import Logo from './assets/Logo.png'
-
 export default function Header(){
     return(
  <section style={{
