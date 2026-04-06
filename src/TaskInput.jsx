@@ -9,6 +9,7 @@ function TaskInput(){
   
     useEffect(()=>{
      localStorage.setItem("tasks" ,JSON.stringify(tasks));
+   
     },[tasks]);
    
 
@@ -70,13 +71,14 @@ return(
             </div>
         </div>
         <ol>
-          {task_f.map((task,index)=>
+          {task_f.length > 0 ?
+             ( task_f.map((task,index)=>
                <li key={index}>
                      <p className={task.completed === true  ? "completed" : "tasks"}>Title:<br/><h2>{task.title}</h2><br/>Created_at:<br/>{task.created_at}</p>
                      <button className='delete' onClick={()=>DeletTask(task.id)}>Delete</button>
                      <button onClick={()=>Completed(task.id)}>Completed</button>
                </li>
-          )}
+          )) : <p className='empty'>Empty</p>}
         </ol>
    </>
 )
@@ -84,3 +86,28 @@ return(
 }
 
 export default TaskInput;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // <ol>
+  //         {task_f.map((task,index)=>
+  //              <li key={index}>
+  //                    <p className={task.completed === true  ? "completed" : "tasks"}>Title:<br/><h2>{task.title}</h2><br/>Created_at:<br/>{task.created_at}</p>
+  //                    <button className='delete' onClick={()=>DeletTask(task.id)}>Delete</button>
+  //                    <button onClick={()=>Completed(task.id)}>Completed</button>
+  //              </li>
+  //         )}
+  //       </ol>

@@ -73,4 +73,12 @@ button {
   background-color: #ff4d4d;
   color: white;
 }
-
+.empty{
+  background-color: #bcd9ff;
+  color: white;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
